@@ -1,0 +1,346 @@
+/* RESET E CONFIGURAÇÕES GLOBAIS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: radial-gradient(circle at top left, #2a0845, #100b16);
+    color: #e0dced;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+pre {
+    white-space: pre-line;
+    font-family: 'Poppins', sans-serif;
+    color: #b5a8cc;
+    font-size: 0.95rem;
+}
+
+h1, h2, h3, h4 { color: #ffffff; }
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    background: linear-gradient(45deg, #b06ab3, #4568dc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* HEADER & NAVEGAÇÃO */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(16, 11, 22, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(176, 106, 179, 0.2);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #b06ab3;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #e0dced;
+    font-weight: 600;
+    transition: color 0.3s;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: linear-gradient(45deg, #b06ab3, #4568dc);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after { width: 100%; }
+
+button {
+    background: linear-gradient(45deg, #b06ab3, #4568dc);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: #ffffff 1px solid;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button a { color: white; text-decoration: none; }
+button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(176, 106, 179, 0.4);
+}
+
+section {
+    padding: 5rem 5%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* HOME (APRESENTAÇÃO) */
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80vh;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.home-content pre {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.home-content b { color: #b06ab3; font-size: 3.2rem; }
+
+/* Container da imagem ajustado para centralizar */
+.home-image_profile {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo aplicado diretamente na imagem */
+.home-image_profile img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover; /* Garante que a foto não fique achatada */
+    border-radius: 50%; /* Deixa a imagem 100% redonda */
+    
+    /* Configuração da borda com gradiente */
+    border: 5px solid transparent; 
+    background: linear-gradient(#100b16, #100b16) padding-box,
+                linear-gradient(45deg, #B06AB3, #4568DC) border-box;
+                
+    /* Efeito Luminoso (Glow) */
+    box-shadow: 0 0 20px rgba(176, 106, 179, 0.8), 
+                0 0 40px rgba(69, 104, 220, 0.8);
+}
+
+/* FORMAÇÃO - CARDS 3D (CLIQUE PARA VIRAR) */
+.cards-historia-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.historia-card {
+    background-color: transparent;
+    width: 100%;
+    height: 380px; /* Altura fixa para o cartão */
+    perspective: 1000px; /* Cria a perspectiva 3D */
+}
+
+/* Esconde a caixa de seleção que ativa o clique */
+.flip-checkbox { display: none; }
+
+.historia-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    display: block;
+}
+
+/* O Segredo: Quando o checkbox é "marcado" pelo clique, o cartão gira */
+.flip-checkbox:checked + .historia-card-inner {
+    transform: rotateY(180deg);
+}
+
+.historia-card-front, .historia-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Esconde a parte de trás quando virado */
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.historia-card-front {
+    background: linear-gradient(135deg, rgba(176, 106, 179, 0.1), rgba(69, 104, 220, 0.1));
+    border: 1px solid rgba(176, 106, 179, 0.3);
+}
+
+.historia-card-front h4 {
+    font-size: 2rem;
+    color: #b06ab3;
+}
+
+.click-hint {
+    margin-top: 1rem;
+    font-size: 20px;
+    color: #4568dc;
+    animation: pulse 2s infinite;
+}
+
+.historia-card-back {
+    background: linear-gradient(135deg, #2a0845, #1a1025);
+    border: 1px solid #b06ab3;
+    transform: rotateY(180deg); /* Posição inicial da parte de trás */
+    overflow-y: auto; /* Permite rolar se o texto for muito grande */
+}
+
+.historia-card-back pre {
+    text-align: left;
+}
+
+/* Customização da barra de rolagem dos cards de trás */
+.historia-card-back::-webkit-scrollbar { width: 5px; }
+.historia-card-back::-webkit-scrollbar-thumb { background: #b06ab3; border-radius: 5px; }
+
+/* TECNOLOGIAS - CARDS 3D (HOVER PARA VIRAR) */
+.tech-category {
+    margin-bottom: 3rem;
+}
+
+.tech-category h4 {
+    color: #b06ab3;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.tech-card {
+    background-color: transparent;
+    width: 120px;
+    height: 120px;
+    perspective: 1000px;
+}
+
+.tech-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Gira ao passar o mouse */
+.tech-card:hover .tech-card-inner {
+    transform: rotateY(180deg);
+}
+
+.tech-card-front, .tech-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(176, 106, 179, 0.2);
+}
+
+.tech-card-front {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.tech-card-front img {
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.1); /* Espaço provisório para a logo */
+    border-radius: 8px;
+}
+
+.tech-card-back {
+    background: linear-gradient(45deg, #b06ab3, #4568dc);
+    color: white;
+    transform: rotateY(180deg);
+    font-weight: bold;
+}
+
+/* PORTFÓLIO */
+.trabalho-item {
+    background: rgba(255,255,255,0.03);
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #4568dc;
+    transition: transform 0.3s;
+}
+
+.trabalho-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.06);
+}
+
+.trabalho-item img {
+    width: 100%;
+    max-width: 600px;
+    height: 200px;
+    background: #1a1025;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+/* FOOTER */
+footer {
+    background: #0b0710;
+    padding: 3rem 5%;
+    text-align: center;
+    border-top: 2px solid rgba(176, 106, 179, 0.3);
+}
+
+.footer-contato pre {
+    margin-top: 1rem;
+    color: #b5a8cc;
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.6; transform: scale(1); }
+}
