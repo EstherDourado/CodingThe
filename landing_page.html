@@ -10,6 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <link rel="stylesheet" href="css/style.css">
+    <!-- <script src="js/animacao.js"></script> -->
+
     <title>CondigThê</title>
 </head>
 <body>
@@ -18,87 +20,108 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#formacao">Sobre mim</a></li>
+                <li><a href="#tecnologias">Tecnologias</a></li>
+                <li><a href="#competencias">Competências</a></li>
                 <li><a href="#portifolio">Portfólio</a></li>
             </ul>
         </nav>
-        <button><a href="#contato">Contact me</a></button>
+        <button><a href="#contato">Fale Comigo</a></button>
     </header>
     
     <main>
-        <section id="home" class="home">
+        <!-- SEÇÃO HERO -->
+        <section id="home">
             <div class="home-content">
-                <pre>
-                    Olá eu sou <b>Esther</b>, 
-                    sou desenvolvedora
-                    C#.Net &#128513; 
-                </pre>
-                <button><a href="#portifolio">Ver Portfólio</a></button>
+                <p class="greeting">// Olá, mundo! 👋</p>
+                <h1 class="hero-title">Eu sou <span class="highlight">Esther</span>,<br>desenvolvedora<br><span class="highlight-alt">FullStack</span> 😁</h1>
+                <pre class="hero-desc">Desenvolvedora recém-graduada em Ciência da Computação, com perfil autodidata e base sólida em C#.NET, PHP e desenvolvimento de sistemas.</pre>
+                <div class="hero-buttons">
+                    <a href="#portifolio" class="btn-primary">Ver Portfólio</a>
+                    <a href="#formacao" class="btn-secondary">Sobre mim</a>
+                </div>
             </div>
             <div class="home-image_profile">
-                <img src="img/esther.jpg" width="300" alt="Minha foto">
+                <img src="img/esther.jpg" alt="Foto de Esther Batista">
             </div>
         </section>
 
-        <section id="formacao" class="formacao">
-            <h2>Minha história</h2>
+        <!-- RESUMO PROFISSIONAL -->
+        <section class="resumo glass">
+            <h3>Resumo Profissional</h3>
+            <br>
+            <p>Desenvolvedora FullStack recém-graduada, com forte perfil autodidata. Possuo base sólida em desenvolvimento de sistemas e busco constantemente evoluir através de estudos práticos e projetos próprios. Atualmente busco oportunidades para atuar como Desenvolvedora Júnior, aplicando minhas habilidades em organização e gestão de tempo para entregar software de alta qualidade.</p>
+        </section>
+
+        <!-- MINHA HISTÓRIA (RESUMO DO CURRÍCULO) -->
+        <section id="formacao">
+            <h2>Minha Trajetória</h2>
             
             <div class="cards-historia-container">
+                <!-- CARD: EDUCAÇÃO -->
                 <div class="historia-card">
                     <input type="checkbox" id="flip-faculdade" class="flip-checkbox">
                     <label class="historia-card-inner" for="flip-faculdade">
                         <div class="historia-card-front">
-                            <h4>Faculdade</h4>
+                            <h4>Formação Acadêmica</h4>
                             <span class="click-hint">&#127891;</span>
+                            <p style="margin-top: 15px; font-size: 0.9rem;">Toque para ver mais</p>
                         </div>
                         <div class="historia-card-back">
-                            <pre>
-                                Bacharel em Ciência da Computação pela UNICID (Carrão), com formação nas áreas de estrutura de dados, teoria dos grafos, engenharia de software, computação em nuvem, análise de dados, inteligência artificial, cálculo I e II e matemática discreta. 
-                            </pre>
+                            <h4>Ciência da Computação</h4>
+                            <p><strong>Universidade Cidade de São Paulo (UNICID)</strong></p>
+                            <p><em>Jan/2022 - Dez/2025</em></p>
+                            <p>Bacharelado com formação focada em:</p>
+                            <p>• Estrutura de Dados I e II<br>• Engenharia de Software<br>• Computação em Nuvem & IA<br>• Teoria dos Grafos<br>• Sistemas Cliente/Servidor<br>• Modelagem de Banco de Dados</p>
                         </div>
                     </label>
                 </div>
 
+                <!-- CARD: ESTÁGIO -->
                 <div class="historia-card">
                     <input type="checkbox" id="flip-estagio" class="flip-checkbox">
                     <label class="historia-card-inner" for="flip-estagio">
                         <div class="historia-card-front">
-                            <h4>Estágio</h4>
+                            <h4>Experiência</h4>
                             <span class="click-hint">&#128187;</span>
+                            <p style="margin-top: 15px; font-size: 0.9rem;">Toque para ver mais</p>
                         </div>
                         <div class="historia-card-back">
-                            <pre>
-                                Em 2024 eu consegui um estágio como desenvolvedora PHP, lá eu coloquei em prática todos os conhecimentos que eu tinha, além disso aprendi a refatorar códigos, estruturar telas e consultas complexas. 
-                                Conheci pessoas maravilhosas, que me incentivaram a enfrentar meus medos de falar em público e a me expressar melhor.
-                            </pre>
+                            <h4>Desenvolvedora Estagiária</h4>
+                            <p><strong>Royal Tecidos</strong></p>
+                            <p><em>Mai/2024 - Ago/2025</em></p>
+                            <p>• <strong>Full Stack:</strong> Criação e manutenção de funcionalidades do sistema interno usando PHP e MySQL.</p>
+                            <p>• <strong>Otimização:</strong> Automação de processos manuais e refatoração de código legado para modernização.</p>
+                            <p>• <strong>Interface:</strong> Melhoria de usabilidade para funcionários utilizando HTML, CSS e JavaScript/jQuery.</p>
                         </div>
                     </label>
                 </div>
 
+                <!-- CARD: PROJETOS -->
                 <div class="historia-card">
                     <input type="checkbox" id="flip-estudos" class="flip-checkbox">
                     <label class="historia-card-inner" for="flip-estudos">
                         <div class="historia-card-front">
-                            <h4>Estudos</h4>
-                            <span class="click-hint">&#128214;</span>
+                            <h4>Projetos e Estudos</h4>
+                            <span class="click-hint">&#128640;</span>
+                            <p style="margin-top: 15px; font-size: 0.9rem;">Toque para ver mais</p>
                         </div>
                         <div class="historia-card-back">
-                            <pre>
-                                Eu sempre fui autoditada, sempre estudei por fora, busquei conhecimento
-                                pela internet, videos no youtube, cursos gratuitos, livros,
-                                participei de bootcamps, e até hoje estudo por fora.
-                            </pre>
+                            <h4>Autodidata & Projetos Pessoais</h4>
+                            <p>Sempre busquei conhecimento além da sala de aula através de bootcamps, livros e internet.</p>
+                            <p><strong>Projeto Destaque:</strong></p>
+                            <p><em>Sistema Centralizado de Gestão de Varejo (C#.NET Core)</em></p>
+                            <p>Projeto autoral arquitetado para duas lojas, com foco em estoque centralizado, caixas independentes e banco de dados relacional robusto para integridade transacional.</p>
                         </div>
                     </label>
                 </div>
             </div>
         </section>
-
-        <section id="tecnologias" class="tecnologias">
+        
+        <!-- TECNOLOGIAS -->
+        <section id="tecnologias">
             <h2>Tecnologias</h2>
-            
-            <div class="tech-category">
-                <h4>Linguagens</h4>
+
                 <ul class="tech-grid">
                     <li class="tech-card">
                         <div class="tech-card-inner">
@@ -147,41 +170,98 @@
             </div>
         </section>
 
-        <section id="portifolio" class="portifolio">
+        <!-- COMPETÊNCIAS -->
+        <section id="competencias">
+            <h2>Competências</h2>
+            <div class="competencias-grid">
+                <div class="comp-card">
+                    <div class="comp-icon">
+                        <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <h4>Linguagens</h4>
+                    <p>C# (.NET Core/MVC), PHP, JavaScript</p>
+                </div>
+                
+                <div class="comp-card">
+                    <div class="comp-icon">
+                        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                    </div>
+                    <h4>Banco de Dados</h4>
+                    <p>SQL Server, MySQL, Modelagem de Dados</p>
+                </div>
+
+                <div class="comp-card">
+                    <div class="comp-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <h4>Front-End</h4>
+                    <p>HTML, CSS, Bootstrap, jQuery</p>
+                </div>
+
+                <div class="comp-card">
+                    <div class="comp-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                    </div>
+                    <h4>Ferramentas</h4>
+                    <p>Git, GitHub, Visual Studio, VS Code</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFÓLIO -->
+        <section id="portifolio">
             <h2>Meus Trabalhos</h2>
             
-            <article class="trabalho-item">
-                <h4>Figma</h4>
-                <pre>Minhas prototipações no figma</pre>
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/r1a38OjrkbY1Zh7b5qo9Yl/Cardapio?embed-host=share" allowfullscreen></iframe>
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/NKy2gtDgE2XSRkxBXNb6Cs/Delivery-App?embed-host=share" allowfullscreen></iframe>
-            </article>
+            <div class="portifolio-grid">
+                <!-- Projeto Sistema C# -->
+                <article class="trabalho-item glass tilt-card">
+                    <h4>Gestão de Varejo Centralizado</h4>
+                    <div>
+                        <span class="badge">C#.NET Core</span>
+                        <span class="badge">SQL Server</span>
+                        <span class="badge">Arquitetura</span>
+                    </div>
+                    <p>Sistema completo de gerenciamento de estoque unificado e controle de caixa. Projetado para suportar múltiplas filiais garantindo a integridade dos dados e transações independentes em cada unidade.</p>
+                    <a href="https://github.com/EstherDourado" target="_blank" style="color:#b06ab3; font-weight: bold; margin-top: 10px;">Ver no GitHub &rarr;</a>
+                </article>
 
-            <article class="trabalho-item">
-                <a href="https://github.com/EstherDourado">
-                <h4>Github</h4>
-                <pre>Aqui está hospedados um sistema completo de gerenciamento de estoque unificados, e controle de caixa.</pre>
-                </a>
-            </article>
-
-            <!-- <article class="trabalho-item">
-                <h4>VideoMaker</h4>
-                <pre>Esse são meus trabalhos como freelancer, e também atuação com midia na minha igreja</pre>
-            </article> -->
+                <!-- Projetos Figma -->
+                <article class="trabalho-item glass tilt-card">
+                    <h4>Prototipações UI/UX (Figma)</h4>
+                    <div>
+                        <span class="badge">Figma</span>
+                        <span class="badge">Design de Interface</span>
+                    </div>
+                    <p>Concepção visual e fluxo de usuários para aplicativos focados em delivery e cardápios digitais.</p>
+                    <iframe height="250" src="https://embed.figma.com/design/r1a38OjrkbY1Zh7b5qo9Yl/Cardapio?embed-host=share" allowfullscreen></iframe>
+                    <!-- <iframe height="250" src="https://embed.figma.com/design/NKy2gtDgE2XSRkxBXNb6Cs/Delivery-App?embed-host=share" allowfullscreen></iframe> -->
+                </article>
+            </div>
         </section>
     </main>
 
     <footer id="contato">
-        <h4>Desenvolvido por Esther&copy;</h4>
-        <section class="footer-contato">
-            <h4>Fale comigo</h4>
-            <pre>
-                📧 email - estherdb03@gmail.com
-                💼 linkedin - esther.batista
-                💻 github - Esther Dourado
-                📱 telefone - 55 119865477439
-            </pre>
+        <h2>Fale comigo</h2>
+        <section class="footer-contato-cards">
+            <a href="mailto:estherdb03@gmail.com" class="contact-card">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                estherdb03@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/esther-batista" target="_blank" class="contact-card">
+                <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                esther.batista
+            </a>
+            <a href="https://github.com/EstherDourado" target="_blank" class="contact-card">
+                <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                EstherDourado
+            </a>
+            <a href="https://wa.me/55119865477439" target="_blank" class="contact-card">
+                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                +55 11 98654-77439
+            </a>
         </section>
+        <p style="margin-top: 3rem; font-size: 0.9rem; color: #b5a8cc;">Desenvolvido por <strong style="color: #b06ab3;">Esther</strong> &copy; 2026</p>
     </footer>
+
 </body>
 </html>
