@@ -630,19 +630,77 @@ footer {
 }
 
 /*  MEDIA QUERIES (MOBILE)  */
-@media screen and (max-width: 900px) {
+ @media screen and (max-width: 900px) {
     .contato-container { grid-template-columns: 1fr; gap: 2rem; padding: 2rem 1.5rem; }
-    #home { flex-direction: column-reverse; text-align: center; }
-    .hero-title { font-size: 2.8rem; }
+
+    /* EDITEI AQUI: flex-direction: column-reverse garante a foto em cima. Adicionado gap de 2rem para espaçamento. */
+    #home { flex-direction: column-reverse; text-align: center; gap: 2rem; padding-top: 1rem; }
+
+    .hero-title { font-size: 2.2rem; margin-bottom: 1rem; }
+    .hero-desc { font-size: 0.9rem; text-align: center; margin-bottom: 1.5rem; }
     .hero-buttons, .social-icon { justify-content: center; }
-    .home-image_profile img { max-width: 300px; }
+
+    /* EDITEI AQUI: A imagem de perfil ficou ainda menor para dar mais harmonia */
+    .home-image_profile img { max-width: 200px; }
+
     nav ul { display: none; /* Menu escondido no mobile para simplicidade neste arquivo */ }
 }
 
 @media screen and (max-width: 768px) {
-    /* Ajuste da Timeline no Mobile */
-    .timeline::after { left: 31px; }
-    .tl-container { width: 100%; padding-left: 70px; padding-right: 15px; }
-    .tl-left::after, .tl-right::after { left: 21px; }
-    .tl-right { left: 0%; }
+/* EDITEI AQUI: O título (Logo) do site fica menor na barra de navegação */
+header h1 { font-size: 1.5rem; }
+
+/* EDITEI AQUI: Todos os Títulos de seção (h2) proporcionalmente menores */
+h2 { font-size: 1.6rem; margin-bottom: 1.5rem; }
+section { padding: 3rem 5%; }
+.resumo { padding: 1.5rem; margin-bottom: 2rem; }
+.resumo p { font-size: 0.85rem; text-align: center; }
+
+/* Ajuste da Timeline no Mobile */
+.timeline::after { left: 31px; }
+.tl-container { width: 100%; padding-left: 70px; padding-right: 15px; }
+.tl-left::after, .tl-right::after { left: 21px; }
+.tl-right { left: 0%; }
+
+/* EDITEI AQUI: Textos dos cartões da Trajetória reduzidos */
+.tl-content h3 { font-size: 1rem; }
+.tl-content h4 { font-size: 0.95rem; }
+.tl-content p { font-size: 0.85rem; }
+
+/* EDITEI AQUI: Grids menores para a seção de tecnologias futuras caso decida reativá-las */
+.tech-grid { gap: 1rem; padding: 1rem; }
+.tech-card { width: 85px; height: 85px; gap: 5px; }
+.tech-card img { width: 30px; height: 30px; }
+.tech-card span { font-size: 0.75rem; }
+
+/* Ajuste dos Grids para evitar overflow */
+.portifolio-grid { grid-template-columns: 1fr; }
+.competencias-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+/* EDITEI AQUI: Cartões de Habilidades Técnicas, suas fontes e ícones reduzidos */
+.comp-card { padding: 1.5rem 1rem; }
+.comp-icon { width: 40px; height: 40px; margin-bottom: 0.5rem; }
+.comp-icon i { font-size: 1.2rem !important; }
+.comp-card h4 { font-size: 1rem; }
+.comp-card p { font-size: 0.8rem; }
+
+/* EDITEI AQUI: Elementos dos cartões de Portfólio (textos, tags e altura do video) encolhidos */
+.trabalho-item h4 { font-size: 1.15rem; }
+.trabalho-item p { font-size: 0.85rem !important; }
+.trabalho-item a { font-size: 0.85rem !important; }
+.badge { font-size: 0.7rem; padding: 3px 8px; }
+.media-item video, .media-item iframe { height: 150px; }
+
+/* EDITEI AQUI: Campos e botões do formulário adaptados */
+.input-group input, .input-group textarea { font-size: 0.85rem; padding: 12px; }
+#contato_form button { font-size: 0.9rem !important; }
+
+/* EDITEI AQUI: Ícones e textos da seção final de contatos (redes sociais) */
+.contact-card { padding: 12px 15px; gap: 10px; }
+.contact-card i { font-size: 1rem; width: 20px; }
+.contact-card span { font-size: 0.85rem; }
+
+/* Ajuste Botoes mobile */
+.btn-primary, .btn-secondary { padding: 10px 20px; font-size: 0.85rem; }
+.social-icon a { font-size: 1.2rem; }
 }
